@@ -13,4 +13,11 @@ def hello_world():
 def vt1():
     return render_template('pohja.xhtml')
 
+@app.route('/luo', methods = ['POST', 'GET'])
+def luo():
+    koko = int(request.form["x"])
+    p1 = request.form["pelaaja1"]
+    p2 = request.form["pelaaja2"]
+    
+    
 
