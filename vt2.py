@@ -9,3 +9,8 @@ app = Flask(__name__)
 def hello_world():
     return Response("Hello World", content_type="text/plain; charset=UTF-8")
 
+@app.route('/vt2')
+def vt1():
+    return render_template('pohja.xhtml')
+
+
