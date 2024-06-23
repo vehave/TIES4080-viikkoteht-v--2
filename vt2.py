@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request, Response
 import os
+import jinja2
 app = Flask(__name__)
 
 # @app.route määrää mille osoitteille tämä funktio suoritetaan
