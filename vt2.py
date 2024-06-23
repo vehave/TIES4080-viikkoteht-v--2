@@ -18,6 +18,8 @@ def luo():
     koko = int(request.form["x"])
     p1 = request.form["pelaaja1"]
     p2 = request.form["pelaaja2"]
+
+    return render_template("pohja.xhtml", x=koko, pelaaja1=p1, pelaaja2=p2)
     
     
 
