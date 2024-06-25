@@ -10,96 +10,32 @@
 <!-- täydennä lomaketta tarpeen mukaan. Älä kuitenkaan muuta kenttien nimiä -->
 <form action="#" method="get">
 <label>Laudan koko <input type="text" value="8" name="x" /></label>
+<p class="errormsg" id="value">Anna kokonaisluku 8-16</p>
 <label>Pelaaja 1 <input type="text" value="" name="pelaaja1" /></label>
 <label>Pelaaja 2<input type="text" value="" name="pelaaja2" /></label>
 <p><input type="submit" name="luo" value="Luo pelilauta" /></p>
 </form>
 <h3>{{pelaaja1}}</h3>
-{% if(x == 8) %} 
+
 <table border="1px">
-<tr>
-<td height="50px" width="50px" bgcolor="black">  <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-<td height="50px" width="50px"> </td>
-</tr>
-<tr>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> </td>
-<td height="50px" width="50px" bgcolor="black"> </td>
-<td height="50px" width="50px"> <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" class="center"> </img> </td>
-</tr>
+{% for k in range (1,x) %} 
+  <tr>
+  {% for n in range (1,x) %}
+    {% if n==k and n%2!=0 %}
+      <td height="50px" width="50px" bgcolor="black">  <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" alt="Sininen pelinappula" class="center"> </img> </td>
+    {% elif n==k and n%2==0 %}
+      <td height="50px" width="50px" bgcolor="white">  <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" alt="Sininen pelinappula" class="center"> </img> </td>
+    {% elif n%2!=0 %}
+      <td height="50px" width="50px" bgcolor="black"> </td>
+    {% else %}
+      <td height="50px" width="50px"> </td>
+    {% endif %}
+  {% endfor %}
+  </tr>
+{% endfor %}
+
 </table>
 
-{% endif %}
 <h3>{{pelaaja2}}</h3>
 
 <!-- Tästä eteenpäin on vain apuvälineenä käytettäviä skriptejä -->
