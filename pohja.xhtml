@@ -6,18 +6,19 @@
 <title>TIES4080 - Viikkotehtävä 2 - 2024 kevät</title>
 </head>
 <body>
-
+<h1>Pelilauta</h1>
+<p>Kerro luotavan pelialueen koko ja pelaajien nimet. Ruudukko on yhtä monta ruutua leveä kuin korkea.</p>
 <!-- täydennä lomaketta tarpeen mukaan. Älä kuitenkaan muuta kenttien nimiä -->
 <form action="#" method="get">
-<label>Laudan koko <input type="text" value="8" name="x" /></label>
-<span class="errormsg"> {{virheviesti}}</span>
-<label>Pelaaja 1 <input type="text" value="" name="pelaaja1" /></label>
-<label>Pelaaja 2<input type="text" value="" name="pelaaja2" /></label>
-<p><input type="submit" name="luo" value="Luo pelilauta" /></p>
+<label>Laudan koko <input class="center" type="text" value="8" name="x" /></label>
+<span class="errormsg"> {{virheviesti}}</span><br>
+<label>Pelaaja 1 <input class="center" type="text" value="" name="pelaaja1" /></label><br>
+<label>Pelaaja 2<input class="center" type="text" value="" name="pelaaja2" /></label>
+<p><input class="center" type="submit" name="luo" value="Luo pelilauta" /></p>
 </form>
 <h3>{{pelaaja1}}</h3>
 
-<table border="1px">
+<table class="center" border="1px">
 {% for k in range (1,x) %} 
   <tr>
   {% for n in range (1,x) %}
