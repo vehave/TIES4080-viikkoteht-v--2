@@ -10,7 +10,7 @@
 <p>Kerro luotavan pelialueen koko ja pelaajien nimet. Ruudukko on yhtä monta ruutua leveä kuin korkea.</p>
 <!-- täydennä lomaketta tarpeen mukaan. Älä kuitenkaan muuta kenttien nimiä -->
 <form action="#" method="get">
-<label>Laudan koko <input class="center" type="text" value="8" name="x" /></label>
+<label>Laudan koko <input class="center" type="text" value="8" name="x" /> <span class="errormsg"> {{virheviesti}}</span> </label>
 <span class="errormsg"> {{virheviesti}}</span><br></br>
 <label>Pelaaja 1 <input class="center" type="text" value="" name="pelaaja1" /></label><br></br>
 <label>Pelaaja 2<input class="center" type="text" value="" name="pelaaja2" /></label>
@@ -22,11 +22,11 @@
 {% for k in range (1,x) %} 
   <tr>
   {% for n in range (1,x) %}
-    {% if n==k and n%2!=0 %}
+    {% if n==k and n%2==0 %}
       <td class="black">  <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" alt="Sininen pelinappula" class="center"> </img> </td>
-    {% elif n==k and n%2==0 %}
+    {% elif n==k and n%2!=0 %}
       <td class="white">  <img src="https://appro.mit.jyu.fi/ties4080/vt/vt2/2024/blue.svg" alt="Sininen pelinappula" class="center"> </img> </td>
-    {% elif n%2!=0 %}
+    {% elif n%2==0 %}
       <td class="black"> </td>
     {% else %}
       <td class="white"> </td>
