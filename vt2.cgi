@@ -1,4 +1,4 @@
-#!/home/oma_tunnus/public_html/cgi-bin/ties4080/venv/bin/python
+#!/home/voohartu/public_html/cgi-bin/ties4080/venv/bin/python
 #muuta edelliselle riville oikea polku omaan venv-ympäristöön
 # -*- coding: utf-8 -*-
 # suorittaa Flask-sovellukset CGI-ohjelmina users.jyu.fi-palvelimella
